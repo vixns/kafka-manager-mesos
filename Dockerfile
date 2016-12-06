@@ -12,7 +12,7 @@ RUN \
     unzip  -d / ./target/universal/kafka-manager-${KM_VERSION}.zip && \
     printf '#!/bin/sh\nexec ./bin/kafka-manager -Dconfig.file=${KM_CONFIGFILE} "${KM_ARGS}" "${@}"\n' > /kafka-manager-${KM_VERSION}/km.sh && \
     chmod +x /kafka-manager-${KM_VERSION}/km.sh && \
-    apk del git unzip wget && \    
+    apk del git unzip wget && \
     rm -fr /tmp/* /root/.sbt /root/.ivy2 /var/cache/apk/*
 
 WORKDIR /kafka-manager-${KM_VERSION}
