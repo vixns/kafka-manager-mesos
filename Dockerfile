@@ -1,12 +1,12 @@
 FROM openjdk:8-jdk-alpine
 
-ENV KM_VERSION=1.3.2.1 KM_CONFIGFILE="conf/application.conf"
+ENV KM_VERSION=1.3.3.1 KM_CONFIGFILE="conf/application.conf"
 
 RUN \
     apk add --no-cache git unzip bash wget && \
     mkdir -p /tmp && \
     cd /tmp && \
-    git clone https://github.com/Innometrics/kafka-manager && \
+    git clone --branch ${KM_VERSION} https://github.com/yahoo/kafka-manager && \
     cd /tmp/kafka-manager && \
     ./sbt clean dist && \
     unzip  -d / ./target/universal/kafka-manager-${KM_VERSION}.zip && \
