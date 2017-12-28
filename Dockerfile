@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ENV KM_VERSION=1.3.3.1 KM_CONFIGFILE="conf/application.conf"
+ENV KM_VERSION=1.3.3.15 KM_CONFIGFILE="conf/application.conf"
 
 RUN \
     apk add --no-cache git unzip bash wget && \
